@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+[data-theme='light']{
+  --background-color: #ffffff;
+}
+
+[data-theme='dark']{
+  --background-color: #000;
+}
+
+[data-color='dark']{
+  --background: #ffffff;
+}
+
+[data-color='light']{
+  --background: #000;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  background-color: var(--background-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-out;
+}
+
+h2{
+  color: red;
+}
+
+h2:hover{
+  color: rgb(7, 179, 242);
+  transition: 0.5s ease-in-out;
+}
+
+button{
+  background-color: var(--background);
+  height: 50px;
+  width: 80px;
+  border-radius: 20px;
+  margin-right: 13px;
+  border-color: red;
+  border-width: 3px;
+  color: red;
+  font-size: 0.8rem;
+}
+
+button:hover{
+  transform: translate(0,-8px);
+  box-shadow: 1.5px, 3px rgba(0, 0, 0, .3); 
+  transition: 0.6s ease-in-out;
+  border-color: rgb(7, 179, 242);
+  border-style: solid;
+}
