@@ -2,25 +2,20 @@ import React from "react";
 import useLocalStorage from "use-local-storage";
 
 function App() {
-
-  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
-  const [text, setText] = useLocalStorage("Light Theme")
-  const [color, setColor] = useLocalStorage('color' ? 'dark' : 'light')
+  const [theme, setTheme] = useLocalStorage("dark");
+  const [text, setText] = useLocalStorage("Light Theme");
 
   const switchTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    // nasil girdiginin bir onemi yok newcolor daki gibi de olur ama bu daha iyi .
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     const newText = text === "Light Theme" ? "Dark Theme" : "Light Theme";
     setText(newText);
-    const newColor = color === 'light' ? 'dark' : 'light';
-    setColor(newColor);
-  }
+  };
 
-  
-
-  return ( 
+  return (
     <div className="App" data-theme={theme}>
-      <button onClick={switchTheme} data-color={color} >Click Here</button>
+      <button onClick={switchTheme}>Click Here</button>
       <h2>{text}</h2>
     </div>
   );
